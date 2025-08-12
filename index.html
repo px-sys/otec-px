@@ -37,7 +37,17 @@
     header{position:sticky;top:0;z-index:50;background:rgba(11,18,32,.7);backdrop-filter:saturate(160%) blur(12px);border-bottom:1px solid rgba(255,255,255,.06)}
     .nav{display:flex;align-items:center;justify-content:space-between;padding: .75rem 0}
     .brand{display:flex;gap:.75rem;align-items:center}
-    .logo{width:34px;height:34px;border-radius:10px;background:conic-gradient(from 210deg at 50% 50%, var(--brand), var(--brand-2));box-shadow:0 0 0 2px rgba(255,255,255,.06)}
+    .logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 34px;
+  width: auto;
+  display: block;
+}
+
     .brand h1{font-size:1.05rem;letter-spacing:.4px;margin:0;font-weight:700}
     nav ul{display:flex;gap:1rem;list-style:none;margin:0;padding:0}
     nav a{padding:.5rem .75rem;border-radius:999px;color:var(--muted)}
