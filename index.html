@@ -34,7 +34,39 @@
 
     /* Layout */
     .container{max-width:1120px;margin-inline:auto;padding:0 1rem}
-    header{position:sticky;top:0;z-index:50;background:rgba(11,18,32,.7);backdrop-filter:saturate(160%) blur(12px);border-bottom:1px solid rgba(255,255,255,.06)}
+    header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: #ffffff; /* fondo claro */
+  border-bottom: 1px solid rgba(0,0,0,.1);
+  backdrop-filter: none; /* quitamos el blur oscuro */
+}
+
+nav a {
+  padding: .5rem .75rem;
+  border-radius: 999px;
+  color: #111827; /* texto oscuro */
+}
+
+nav a:hover {
+  color: #000000;
+  background: rgba(0,0,0,.05); /* gris suave al pasar el mouse */
+}
+
+.cta {
+  background: linear-gradient(90deg, #facc15, #eab308); /* amarillo dorado */
+  color: #111827;
+  padding: .6rem .95rem;
+  border-radius: 999px;
+  font-weight: 700;
+  box-shadow: var(--shadow);
+}
+
+.cta:hover {
+  filter: brightness(1.05);
+}
+
     .nav{display:flex;align-items:center;justify-content:space-between;padding: .75rem 0}
     .brand{display:flex;gap:.75rem;align-items:center}
     .logo {
@@ -50,10 +82,26 @@
 
     .brand h1{font-size:1.05rem;letter-spacing:.4px;margin:0;font-weight:700}
     nav ul{display:flex;gap:1rem;list-style:none;margin:0;padding:0}
-    nav a{padding:.5rem .75rem;border-radius:999px;color:var(--muted)}
-    nav a:hover{color:var(--text);background:rgba(255,255,255,.06)}
-    .cta{background:linear-gradient(90deg,var(--brand),#fb7185);padding:.6rem .95rem;border-radius:999px;font-weight:700;box-shadow:var(--shadow)}
-    .cta:hover{filter:brightness(1.05)}
+    nav a {
+  padding: .5rem .75rem;
+  border-radius: 999px;
+  color: #111827; /* texto oscuro */
+}
+    nav a:hover {
+  color: #000000;
+  background: rgba(0,0,0,.05); /* gris suave al pasar el mouse */
+}
+    .cta {
+  background: linear-gradient(90deg, #facc15, #eab308); /* amarillo dorado */
+  color: #111827;
+  padding: .6rem .95rem;
+  border-radius: 999px;
+  font-weight: 700;
+  box-shadow: var(--shadow);
+}
+    .cta:hover {
+  filter: brightness(1.05);
+}
 
     /* Hero */
     .hero{position:relative;overflow:hidden}
