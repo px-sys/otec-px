@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OTEC Px – Capacitación en Excelencia Operacional & Mejora Continua</title>
+  <meta name="description" content="OTEC Px: cursos de excelencia operacional para operadores de equipos móviles (grúas horquillas, apiladores, transpaletas, order picker, alzahombres) y formación en mejora continua e ISO 9001. Kennedy 7440, Vitacura." />
+  <meta name="theme-color" content="#0f172a" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="OTEC Px – Capacitación en Excelencia Operacional & Mejora Continua" />
+  <meta property="og:description" content="Cursos prácticos para operación segura de equipos móviles y formación en ISO 9001. Kennedy 7440, Vitacura." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ejemplo.cl/" />
+  <meta property="og:image" content="/assets/og-otectpx.jpg" />
+  <link rel="icon" href="/assets/favicon.svg" />
+  <style>
+    :root{
+      --bg:#0b1220;          /* azul petróleo muy oscuro */
+      --card:#0f172a;        /* slate-900 */
+      --soft:#111827;        /* gray-900 */
+      --text:#e5e7eb;        /* gray-200 */
+      --muted:#9ca3af;       /* gray-400 */
+      --brand:#ef4444;       /* rojo energía */
+      --brand-2:#14b8a6;     /* acento turquesa */
+      --ring:0 0 0 3px rgba(239,68,68,.35);
+      --radius:18px;
+      --shadow:0 10px 30px rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;height:100%;scroll-behavior:smooth}
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell, Noto Sans, "Helvetica Neue", Arial, "Apple Color Emoji","Segoe UI Emoji"; background:linear-gradient(180deg,var(--bg),#0a0f1a);color:var(--text)}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+
+    /* Layout */
+    .container{max-width:1120px;margin-inline:auto;padding:0 1rem}
+    header{position:sticky;top:0;z-index:50;background:rgba(11,18,32,.7);backdrop-filter:saturate(160%) blur(12px);border-bottom:1px solid rgba(255,255,255,.06)}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding: .75rem 0}
+    .brand{display:flex;gap:.75rem;align-items:center}
+    .logo{width:34px;height:34px;border-radius:10px;background:conic-gradient(from 210deg at 50% 50%, var(--brand), var(--brand-2));box-shadow:0 0 0 2px rgba(255,255,255,.06)}
+    .brand h1{font-size:1.05rem;letter-spacing:.4px;margin:0;font-weight:700}
+    nav ul{display:flex;gap:1rem;list-style:none;margin:0;padding:0}
+    nav a{padding:.5rem .75rem;border-radius:999px;color:var(--muted)}
+    nav a:hover{color:var(--text);background:rgba(255,255,255,.06)}
+    .cta{background:linear-gradient(90deg,var(--brand),#fb7185);padding:.6rem .95rem;border-radius:999px;font-weight:700;box-shadow:var(--shadow)}
+    .cta:hover{filter:brightness(1.05)}
+
+    /* Hero */
+    .hero{position:relative;overflow:hidden}
+    .hero-inner{display:grid;grid-template-columns:1.2fr 1fr;gap:2rem;align-items:center;padding:clamp(2rem,6vw,5rem) 0}
+    .badge{display:inline-flex;gap:.5rem;align-items:center;padding:.35rem .6rem;border:1px solid rgba(255,255,255,.1);border-radius:999px;color:var(--muted);font-size:.85rem}
+    .badge i{width:8px;height:8px;border-radius:999px;background:var(--brand)}
+    .hero h2{font-size:clamp(2rem,4.5vw,3.2rem);line-height:1.1;margin:.6rem 0 .8rem 0}
+    .hero p{color:#cbd5e1;font-size:1.05rem}
+    .hero-cards{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.5rem}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:1rem;box-shadow:var(--shadow)}
+    .card h3{margin:.2rem 0 .5rem 0;font-size:1.05rem}
+    .chip{display:inline-flex;align-items:center;gap:.4rem;padding:.25rem .5rem;border-radius:999px;font-size:.8rem;color:#e2e8f0;border:1px solid rgba(255,255,255,.1)}
+
+    /* Sections */
+    section{padding:clamp(2.5rem,6vw,4rem) 0;border-top:1px solid rgba(255,255,255,.06)}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+    .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+    .kpi{display:flex;gap:.75rem;align-items:center}
+    .kpi strong{font-size:1.5rem}
+    .list{display:grid;gap:.5rem;margin:.75rem 0 0 0}
+    .list li{display:flex;gap:.5rem;align-items:flex-start}
+    .list li i{margin-top:.45rem;width:.6rem;height:.6rem;border-radius:999px;background:var(--brand-2)}
+
+    /* Pricing / Licencia */
+    .pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+    .plan{padding:1rem;border-radius:var(--radius);border:1px solid rgba(255,255,255,.08);background:linear-gradient(180deg,rgba(20,184,166,.08),rgba(255,255,255,.02))}
+    .plan h4{margin:.2rem 0 .5rem}
+
+    /* FAQ */
+    details{border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:.9rem 1rem;background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02))}
+    details+details{margin-top:.6rem}
+    summary{cursor:pointer;font-weight:600}
+
+    /* Contacto */
+    .contact{display:grid;grid-template-columns:1.1fr .9fr;gap:1rem}
+    form{display:grid;gap:.7rem}
+    input,select,textarea{width:100%;padding:.8rem;border-radius:12px;background:#0b1220;border:1px solid rgba(255,255,255,.12);color:var(--text)}
+    input:focus,select:focus,textarea:focus{outline:none;box-shadow:var(--ring);border-color:rgba(239,68,68,.65)}
+    button{cursor:pointer}
+
+    /* Footer */
+    footer{border-top:1px solid rgba(255,255,255,.06);padding:1.2rem 0;color:var(--muted)}
+
+    /* Responsive */
+    @media (max-width: 920px){
+      .hero-inner{grid-template-columns:1fr}
+      .grid-3{grid-template-columns:1fr}
+      .grid-2{grid-template-columns:1fr}
+      .pricing{grid-template-columns:1fr}
+      .contact{grid-template-columns:1fr}
+      nav ul{display:none}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <h1>OTEC Px</h1>
+      </div>
+      <nav aria-label="principal">
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#areas">Áreas</a></li>
+          <li><a href="#licencia">Licencia Clase D</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+      <a class="cta" href="#contacto">Cotiza tu curso</a>
+    </div>
+  </header>
+
+  <main id="inicio" class="hero">
+    <div class="container hero-inner">
+      <div>
+        <span class="badge"><i></i> Capacitación de alto impacto</span>
+        <h2>Excelencia Operacional & Mejora Continua para equipos de trabajo que mueven resultados</h2>
+        <p>Entrenamos a tus equipos en <strong>operación segura y eficiente de equipos móviles</strong> y formamos <strong>auditores internos</strong> bajo la filosofía de <strong>mejora continua</strong> basada en ISO 9001.</p>
+        <div class="hero-cards">
+          <article class="card">
+            <h3>Excelencia Operacional</h3>
+            <ul class="list">
+              <li><i></i>Grúa horquilla</li>
+              <li><i></i>Apiladores eléctricos</li>
+              <li><i></i>Transpaletas eléctricas</li>
+              <li><i></i>Order picker</li>
+              <li><i></i>Alzahombres</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Mejora Continua</h3>
+            <ul class="list">
+              <li><i></i>ISO 9001: formación de auditores internos</li>
+              <li><i></i>Fundamentos de mejora continua</li>
+              <li><i></i>Herramientas básicas (PDCA, 5S, Ishikawa)</li>
+            </ul>
+          </article>
+        </div>
+        <p class="kpi" aria-label="ubicación"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 22s7-4.438 7-11a7 7 0 10-14 0c0 6.562 7 11 7 11z" stroke="#14b8a6" stroke-width="1.5"/><circle cx="12" cy="11" r="3" stroke="#14b8a6" stroke-width="1.5"/></svg> <span>Kennedy 7440, Vitacura</span></p>
+      </div>
+      <div>
+        <picture>
+          <source srcset="/assets/hero.webp" type="image/webp" />
+          <img src="/assets/hero.jpg" alt="Operador certificado usando grúa horquilla en un centro de distribución" loading="eager"/>
+        </picture>
+      </div>
+    </div>
+  </main>
+
+  <section id="areas">
+    <div class="container">
+      <h2>Áreas de capacitación</h2>
+      <div class="grid-2" style="margin-top:1rem">
+        <div class="card">
+          <h3>1) Excelencia Operacional</h3>
+          <p>Programas prácticos para quienes operan <strong>equipos móviles</strong> al interior de las empresas. Enfocados en seguridad, rendimiento y reducción de incidentes.</p>
+          <ul class="list">
+            <li><i></i>Inducción técnica del equipo y checklist pre-operacional</li>
+            <li><i></i>Buenas prácticas de conducción y maniobras de precisión</li>
+            <li><i></i>Gestión de riesgos y señalética en bodega</li>
+            <li><i></i>Evaluación teórico-práctica con retroalimentación</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>2) Mejora Continua</h3>
+          <p>Formación basada en <strong>ISO 9001</strong> para comprender la filosofía de mejora continua y desarrollar competencias de <strong>auditor interno</strong>.</p>
+          <ul class="list">
+            <li><i></i>Interpretación de ISO 9001 y enfoque a procesos</li>
+            <li><i></i>Planificación y ejecución de auditorías internas</li>
+            <li><i></i>Redacción de hallazgos y acciones de mejora</li>
+            <li><i></i>Talleres con casos reales</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="licencia">
+    <div class="container">
+      <h2>Tramitación de Licencia de Conducir <span class="chip">Clase D</span></h2>
+      <p>Apoyamos a tu equipo en la <strong>gestión de la Licencia Clase D</strong> para operadores de maquinaria. Te guiamos en requisitos, documentación y preparación para los exámenes.</p>
+      <div class="pricing" style="margin-top:1rem">
+        <div class="plan">
+          <h4>Asesoría Individual</h4>
+          <p class="muted">Checklist de requisitos, simulación de examen teórico y plan de estudio.</p>
+          <ul class="list">
+            <li><i></i>Sesión 1: requisitos y documentación</li>
+            <li><i></i>Sesión 2: simulación teórica</li>
+            <li><i></i>Guía descargable</li>
+          </ul>
+          <p><em>Escríbenos para cotizar.</em></p>
+        </div>
+        <div class="plan" style="background:linear-gradient(180deg,rgba(239,68,68,.08),rgba(255,255,255,.02));border-color:rgba(239,68,68,.25)">
+          <h4>Empresas (Grupos)</h4>
+          <p class="muted">Acompañamiento integral y coordinación con RR.HH.</p>
+          <ul class="list">
+            <li><i></i>Capacitación previa a los exámenes</li>
+            <li><i></i>Calendario y evidencias</li>
+            <li><i></i>Reporte de avance</li>
+          </ul>
+          <p><em>Escríbenos para cotizar.</em></p>
+        </div>
+        <div class="plan">
+          <h4>Soporte Documental</h4>
+          <p class="muted">Plantillas y orientación para postular en tu comuna.</p>
+          <ul class="list">
+            <li><i></i>Revisión de antecedentes</li>
+            <li><i></i>Derivación a enlaces oficiales</li>
+            <li><i></i>Checklist digital</li>
+          </ul>
+          <p><em>Escríbenos para cotizar.</em></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2>Modalidades y metodología</h2>
+      <div class="grid-3" style="margin-top:1rem">
+        <article class="card">
+          <h3>In-company</h3>
+          <p>Entrenamos en tus instalaciones con tus equipos y tus riesgos reales.</p>
+        </article>
+        <article class="card">
+          <h3>Presencial / Terreno</h3>
+          <p>Sesiones prácticas con evaluación en terreno y retroalimentación inmediata.</p>
+        </article>
+        <article class="card">
+          <h3>Mixto</h3>
+          <p>Teoría online + práctica presencial para optimizar tiempos y resultados.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="container">
+      <h2>Preguntas frecuentes</h2>
+      <details>
+        <summary>¿Emiten certificados de aprobación?</summary>
+        <p>Sí, entregamos certificado de participación y/o aprobación según evaluación aplicada.</p>
+      </details>
+      <details>
+        <summary>¿Pueden adaptar contenidos a nuestra realidad?</summary>
+        <p>Claro, diseñamos el programa tras una breve caracterización de riesgos y procesos.</p>
+      </details>
+      <details>
+        <summary>¿Apoyan la tramitación de Licencia Clase D?</summary>
+        <p>Sí, te acompañamos con requisitos y preparación teórica para que postules correctamente.</p>
+      </details>
+    </div>
+  </section>
+
+  <section id="contacto">
+    <div class="container contact">
+      <div>
+        <h2>Conversemos tu necesidad</h2>
+        <p>Cuéntanos el tamaño de tu equipo, turnos y equipos móviles que utilizan. Responderemos en menos de 24 horas hábiles.</p>
+        <form id="form-contacto" action="mailto:contacto@otecpx.cl" method="post" enctype="text/plain">
+          <label>
+            Nombre y cargo
+            <input name="nombre" required placeholder="Ej: Marcela Cifuentes – Jefa de Operaciones" />
+          </label>
+          <label>
+            Empresa
+            <input name="empresa" required placeholder="Ej: Cembrass S.A." />
+          </label>
+          <label>
+            Correo
+            <input type="email" name="email" required placeholder="tu@correo.cl" />
+          </label>
+          <label>
+            Interés
+            <select name="interes" required>
+              <option value="Excelencia Operacional">Excelencia Operacional</option>
+              <option value="Mejora Continua / ISO 9001">Mejora Continua / ISO 9001</option>
+              <option value="Licencia Clase D">Licencia Clase D</option>
+            </select>
+          </label>
+          <label>
+            Mensaje
+            <textarea name="mensaje" rows="4" placeholder="Cuéntanos brevemente qué necesitas"></textarea>
+          </label>
+          <button class="cta" type="submit">Enviar consulta</button>
+          <p class="muted">También puedes escribir a <a href="mailto:contacto@otecpx.cl">contacto@otecpx.cl</a>.</p>
+        </form>
+      </div>
+      <div class="card">
+        <h3>Ubicación</h3>
+        <p>Kennedy 7440, Vitacura, Región Metropolitana</p>
+        <div style="border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,.1)">
+          <iframe title="Mapa Kennedy 7440 Vitacura" width="100%" height="280" style="border:0;filter:grayscale(1) contrast(1.1)" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Kennedy%207440%20Vitacura&output=embed"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap">
+      <small>© <span id="year"></span> OTEC Px. Todos los derechos reservados.</small>
+      <small>Diseñado con foco en seguridad, calidad y resultados.</small>
+    </div>
+  </footer>
+
+  <script>
+    // Año dinámico en el footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mejora accesibilidad de <details>: cerrar hermanos al abrir uno
+    document.querySelectorAll('#faq details').forEach(d => {
+      d.addEventListener('toggle', () => {
+        if(d.open){
+          document.querySelectorAll('#faq details').forEach(o => { if(o!==d) o.removeAttribute('open'); });
+        }
+      });
+    });
+
+    // Prevención: advertir sobre mailto (puede fallar en algunos navegadores) y proponer fallback
+    const form = document.getElementById('form-contacto');
+    form.addEventListener('submit', (e) => {
+      if(!/mailto:/i.test(form.getAttribute('action'))){ return; }
+      const ok = confirm('Este formulario abrirá tu cliente de correo. ¿Deseas continuar?');
+      if(!ok){ e.preventDefault(); alert('Puedes escribirnos a contacto@otecpx.cl'); }
+    });
+  </script>
+</body>
+</html>
