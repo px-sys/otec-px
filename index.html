@@ -82,7 +82,7 @@ nav a:focus-visible{outline:none;box-shadow:0 0 0 3px rgba(251,191,36,.6)}
   scroll-margin-top:calc(var(--header-h) + 12px);
 }
 .hero::before{
-  content:""; position:absolute; inset:0; background:rgba(0,0,0,.45);
+  content:""; position:absolute; inset:0; background:rgba(0,0,0,.35);
 }
 .hero-inner{
   position:relative; z-index:1;
@@ -90,8 +90,8 @@ nav a:focus-visible{outline:none;box-shadow:0 0 0 3px rgba(251,191,36,.6)}
 }
 .badge{display:inline-flex;gap:.5rem;align-items:center;padding:.35rem .6rem;border:1px solid rgba(255,255,255,.4);border-radius:999px;color:#f9fafb;font-size:.85rem}
 .badge i{width:8px;height:8px;border-radius:999px;background:var(--brand)}
-.hero h2{font-size:clamp(2rem,4.5vw,3.2rem);line-height:1.1;margin:.6rem 0 .8rem 0;color:#fff}
-.hero p{color:#f3f4f6;font-size:1.05rem}
+ .hero h2{ font-size: clamp(1.8rem, 7vw, 2.4rem); }  /* mejor escala en móvil */
+.hero p{  max-width: 58ch; } 
 .hero-cards{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.5rem}
 
 .card{
@@ -169,7 +169,7 @@ footer{
   box-shadow:0 6px 14px rgba(0,0,0,0.25);
 }
 
-@media (max-width: 920px){
+@media (max-width: 600px){
   .grid-3,.grid-2,.pricing,.contact{grid-template-columns:1fr}
   .menu-toggle{display:block}
   nav ul{
