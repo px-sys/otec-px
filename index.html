@@ -258,6 +258,18 @@ footer{
   color: #fff;
 }
 .cta-validate:hover{ filter:brightness(1.05); }
+/* Bajar el botón amarillo del hero */
+:root{
+  --hero-cta-offset: clamp(1rem, 6vh, 4rem); /* sube/baja cambiando este valor */
+}
+.hero-actions{
+  margin-top: var(--hero-cta-offset);
+}
+
+/* En mobile, un poco menos separación */
+@media (max-width: 920px){
+  :root{ --hero-cta-offset: clamp(0.75rem, 4vh, 2rem); }
+}
 
 </style>
 
