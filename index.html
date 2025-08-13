@@ -172,6 +172,11 @@
       position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
       clip:rect(0,0,0,0);white-space:nowrap;border:0;
     }
+    /* Título arriba + descripción debajo en cada curso */
+.list li { align-items: flex-start; }
+.list li > div { display: grid; gap: .15rem; }
+.list li strong { display: block; margin: 0; }
+.list li .desc { color: var(--muted); }
   </style>
 </head>
 
@@ -228,16 +233,36 @@
     <h2>Áreas de capacitación</h2>
 
     <div class="grid-2" style="margin-top:1rem">
+      <section id="areas">
+  <div class="container">
+    <h2>Áreas de capacitación</h2>
+
+    <div class="grid-2" style="margin-top:1rem">
       <!-- Área 1 -->
       <article class="card">
         <h3>1) Gestión de activos críticos móviles</h3>
         <p>Programas prácticos y normados para operar equipos móviles con seguridad, eficiencia y cuidado del activo.</p>
         <ul class="list">
-          <li><i></i><strong>Grúa horquilla:</strong> estabilidad de carga, maniobras en pasillos y prevención de vuelco.</li>
-          <li><i></i><strong>Transpaleta eléctrica:</strong> operación segura, gestión de baterías y circulación en bodega.</li>
-          <li><i></i><strong>Order picker:</strong> trabajo en altura, uso de arnés y procedimientos de picking seguro.</li>
-          <li><i></i><strong>Alzahombres (PEMP):</strong> inspección preoperacional, riesgos de atrapamiento y entornos elevados.</li>
-          <li><i></i><strong>Apiladores eléctricos:</strong> apilado/desapilado, centros de carga y señalización operativa.</li>
+          <li><i></i><div>
+            <strong>Grúa horquilla</strong>
+            <span class="desc">Estabilidad de carga, maniobras en pasillos y prevención de vuelco.</span>
+          </div></li>
+          <li><i></i><div>
+            <strong>Transpaleta eléctrica</strong>
+            <span class="desc">Operación segura, gestión de baterías y circulación en bodega.</span>
+          </div></li>
+          <li><i></i><div>
+            <strong>Order picker</strong>
+            <span class="desc">Trabajo en altura, uso de arnés y procedimientos de picking seguro.</span>
+          </div></li>
+          <li><i></i><div>
+            <strong>Alzahombres (PEMP)</strong>
+            <span class="desc">Inspección preoperacional, riesgos de atrapamiento y entornos elevados.</span>
+          </div></li>
+          <li><i></i><div>
+            <strong>Apiladores eléctricos</strong>
+            <span class="desc">Apilado/desapilado, centros de carga y señalización operativa.</span>
+          </div></li>
         </ul>
       </article>
 
@@ -246,15 +271,28 @@
         <h3>2) Excelencia operacional</h3>
         <p>Formación para instalar cultura de mejora continua y fortalecer tu sistema de gestión de calidad.</p>
         <ul class="list">
-          <li><i></i><strong>Formación de auditores internos:</strong> planificación, ejecución y reporte de auditorías internas.</li>
-          <li><i></i><strong>ISO 9001 – Requisitos:</strong> interpretación de la norma, enfoque a procesos y pensamiento basado en riesgos.</li>
-          <li><i></i><strong>ISO 9001 – Implementación:</strong> diagnóstico, mapa de procesos, procedimientos, indicadores y despliegue.</li>
-          <li><i></i><strong>Liderazgo para equipos de alto rendimiento:</strong> comunicación efectiva, gestión visual y rutina PDCA.</li>
+          <li><i></i><div>
+            <strong>Formación de auditores internos</strong>
+            <span class="desc">Planificación, ejecución y reporte de auditorías internas.</span>
+          </div></li>
+          <li><i></i><div>
+            <strong>ISO 9001 – Requisitos</strong>
+            <span class="desc">Interpretación de la norma, enfoque a procesos y gestión de riesgos.</span>
+          </div></li>
+          <li><i></i><div>
+            <strong>ISO 9001 – Implementación</strong>
+            <span class="desc">Diagnóstico, mapa de procesos, procedimientos e indicadores.</span>
+          </div></li>
+          <li><i></i><div>
+            <strong>Liderazgo para equipos de alto rendimiento</strong>
+            <span class="desc">Comunicación efectiva, gestión visual y rutina PDCA.</span>
+          </div></li>
         </ul>
       </article>
     </div>
   </div>
 </section>
+
   <section id="galeria">
     <div class="container">
       <h2>Nuestras capacitaciones</h2>
