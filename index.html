@@ -270,6 +270,28 @@ footer{
 @media (max-width: 920px){
   :root{ --hero-cta-offset: clamp(0.75rem, 4vh, 2rem); }
 }
+/* ▶︎ Difuminar suavemente la imagen del hero */
+:root{ --hero-blur: 3px; } /* ajusta: 0.5px–4px */
+
+/* Navegadores con soporte: blurea el fondo mediante el overlay */
+.hero::before{
+  backdrop-filter: blur(var(--hero-blur));
+  -webkit-backdrop-filter: blur(var(--hero-blur));
+}
+
+/* Fallback (Firefox): aplica blur directo a la imagen y evita bordes duros */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))){
+  .hero-img{
+    filter: blur(var(--hero-blur)) saturate(.98) brightness(.98);
+    transform: scale(1.03);   /* compensa los bordes del blur */
+    will-change: transform, filter;
+  }
+}
+
+/* En móvil, un blur un poco menor */
+@media (max-width: 920px){
+  :root{ --hero-blur: 1.5px; }
+}
 
 </style>
 
