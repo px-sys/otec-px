@@ -20,7 +20,7 @@
       --brand:#ef4444; --brand-2:#14b8a6;
       --ring:0 0 0 3px rgba(239,68,68,.35);
       --radius:18px; --shadow:0 10px 30px rgba(0,0,0,.08);
-      --header-h:64px; --topbar-h:36px;
+      --header-h:64px;
       --hero-offset: clamp(2rem, 20vh, 9rem);
       --hero-cta-offset: clamp(1rem, 6vh, 4rem);
       --hero-blur: 3px;
@@ -38,60 +38,11 @@
     .muted{color:var(--muted)}
     .container{max-width:1120px;margin-inline:auto;padding:0 1rem}
 
-    /* Topbar (marquesina L→R) */
-.topbar{
-  position: sticky; top: 0; z-index: 70;
-  background: linear-gradient(90deg, var(--brand-2), #10b981);
-  color:#fff; border-bottom:1px solid rgba(0,0,0,.06);
-}
-.topbar-inner{
-  display:flex; align-items:center; gap:.75rem;
-  min-height: var(--topbar-h); padding:.35rem 0;
-}
-.topbar-marquee{
-  flex: 1; display:flex; overflow:hidden; position:relative; gap:0;
-  -webkit-mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
-          mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
-}
-
-/* Cada tanda ocupa el 100% del ancho y se mueve en espejo */
-.marquee-group{
-  flex: 0 0 100%;                 /* << ancho igual al contenedor */
-  display:flex; align-items:center; justify-content:center;
-  gap: 1rem; padding-inline:.5rem;
-  will-change: transform;
-  animation: marquee-in 24s linear infinite;
-  transform: translateX(-100%);   /* posición inicial fuera de pantalla izq. */
-}
-.topbar-marquee .marquee-group:nth-child(2){
-  animation-name: marquee-out;
-  transform: translateX(0%);      /* arranca visible y sale a la derecha */
-}
-
-/* Pastillas */
-.topbar .pill{
-  display:inline-flex; align-items:center; white-space:nowrap;
-  padding:.25rem .6rem; border-radius:999px;
-  background:rgba(255,255,255,.18);
-  border:1px solid rgba(255,255,255,.28);
-  font-weight:600; letter-spacing:.2px; line-height:1;
-}
-
-/* Keyframes: izquierda → derecha */
-@keyframes marquee-in  { from { transform: translateX(-100%) } to { transform: translateX(0%) } }
-@keyframes marquee-out { from { transform: translateX(0%) }   to { transform: translateX(100%) } }
-
-/* Pausa al hover */
-.topbar:hover .marquee-group{ animation-play-state: paused; }
-
-/* Accesibilidad */
-@media (prefers-reduced-motion: reduce){
-  .marquee-group{ animation:none; transform:none }
-  .topbar-marquee{ -webkit-mask-image:none; mask-image:none; justify-content:center }
-}
-
-
-    header{position:sticky; top:var(--topbar-h); z-index:60; background:#fff; border-bottom:1px solid rgba(0,0,0,.08)}
+    /* Header (sin topbar) */
+    header{
+      position:sticky; top:0; z-index:60;
+      background:#fff; border-bottom:1px solid rgba(0,0,0,.08)
+    }
     .nav{display:flex;align-items:center;justify-content:space-between;padding:.75rem 0}
     .brand{display:flex;gap:.75rem;align-items:center}
     .logo img{height:34px;width:auto}
@@ -112,10 +63,26 @@
     .cta-validate{background:linear-gradient(90deg,var(--brand-2),#10b981);color:#fff;display:inline-flex;align-items:center}
 
     /* Hero */
-    .hero{position:relative;background:none;color:#fff;min-height:70vh;padding:clamp(2rem,6vw,5rem) 0;scroll-margin-top:calc(var(--header-h)+var(--topbar-h)+12px)}
-    .hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% var(--hero-focal-y,18%);z-index:0}
-    .hero::before{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.30),rgba(0,0,0,.45));z-index:1;pointer-events:none;backdrop-filter:blur(var(--hero-blur));-webkit-backdrop-filter:blur(var(--hero-blur))}
-    .hero-inner{position:relative;z-index:2;display:grid;justify-items:center;text-align:center;padding-top:var(--hero-offset);padding-bottom:clamp(1rem,4vh,3rem);gap:1rem}
+    .hero{
+      position:relative; background:none; color:#fff; min-height:70vh;
+      padding:clamp(2rem,6vw,5rem) 0;
+      /* anclas cómodas sin topbar */
+      scroll-margin-top: calc(var(--header-h) + 12px);
+    }
+    .hero-img{
+      position:absolute; inset:0; width:100%; height:100%;
+      object-fit:cover; object-position:50% var(--hero-focal-y,18%); z-index:0
+    }
+    .hero::before{
+      content:""; position:absolute; inset:0;
+      background:linear-gradient(to bottom,rgba(0,0,0,.30),rgba(0,0,0,.45));
+      z-index:1; pointer-events:none;
+      backdrop-filter:blur(var(--hero-blur)); -webkit-backdrop-filter:blur(var(--hero-blur))
+    }
+    .hero-inner{
+      position:relative; z-index:2; display:grid; justify-items:center; text-align:center;
+      padding-top:var(--hero-offset); padding-bottom:clamp(1rem,4vh,3rem); gap:1rem
+    }
     .badge{display:inline-flex;gap:.5rem;align-items:center;padding:.35rem .6rem;border:1px solid rgba(255,255,255,.4);border-radius:999px;color:#f9fafb;font-size:.85rem}
     .badge i{width:8px;height:8px;border-radius:999px;background:var(--brand)}
     .hero h2{font-size:clamp(1.9rem,5vw,3rem);max-width:22ch;text-wrap:balance;line-height:1.1;margin:.6rem 0 .8rem}
@@ -130,8 +97,12 @@
     .list li i{margin-top:.45rem;width:.6rem;height:.6rem;border-radius:999px;background:var(--brand-2)}
     .chip{display:inline-flex;align-items:center;gap:.4rem;padding:.25rem .6rem;border-radius:999px;font-size:.8rem;color:#075985;background:rgba(20,184,166,.12);border:1px solid rgba(20,184,166,.25)}
 
-    /* Secciones */
-    section{padding:clamp(2.5rem,6vw,4rem) 0;border-top:1px solid rgba(0,0,0,.06)}
+    /* Secciones (anclas también ajustadas) */
+    section{
+      padding:clamp(2.5rem,6vw,4rem) 0;
+      border-top:1px solid rgba(0,0,0,.06);
+      scroll-margin-top: calc(var(--header-h) + 12px);
+    }
     .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
     .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
 
@@ -173,7 +144,11 @@
       nav ul.open{display:flex}
       .nav{padding:.5rem 0}
       .map-embed{min-height:280px}
-      :root{--hero-offset: clamp(1rem, 24vh, 4rem); --hero-cta-offset: clamp(0.75rem, 4vh, 2rem); --hero-blur:1.5px}
+      :root{
+        --hero-offset: clamp(1rem, 24vh, 4rem);
+        --hero-cta-offset: clamp(0.75rem, 4vh, 2rem);
+        --hero-blur:1.5px;
+      }
     }
 
     /* Fallback blur si no hay backdrop-filter */
@@ -186,28 +161,6 @@
 </head>
 
 <body>
-
-  <!-- Topbar de mensajes con marquesina -->
-  <div class="topbar" role="region" aria-label="Mensajes destacados">
-    <div class="container topbar-inner">
-      <div class="topbar-marquee" aria-hidden="true">
-        <div class="marquee-group">
-          <span class="pill">Capacitación de alto impacto</span>
-          <span class="pill">Excelencia operacional</span>
-          <span class="pill">Reducir incidentes y costos</span>
-          <span class="pill">ISO 9001 & auditoría interna</span>
-        </div>
-        <div class="marquee-group" aria-hidden="true">
-          <span class="pill">Capacitación de alto impacto</span>
-          <span class="pill">Excelencia operacional</span>
-          <span class="pill">Reducir incidentes y costos</span>
-          <span class="pill">ISO 9001 & auditoría interna</span>
-        </div>
-      </div>
-      <button class="topbar-close" aria-label="Ocultar mensajes" title="Ocultar">✕</button>
-    </div>
-  </div>
-
   <header>
     <div class="container nav">
       <div class="brand">
@@ -417,12 +370,6 @@
           toggleBtn.setAttribute('aria-expanded','false');
         }
       });
-    });
-
-    // Cerrar topbar (marquesina)
-    document.querySelector('.topbar-close')?.addEventListener('click', () => {
-      const bar = document.querySelector('.topbar');
-      if (bar) bar.style.display = 'none';
     });
 
     // FAQ: cerrar hermanos al abrir uno
